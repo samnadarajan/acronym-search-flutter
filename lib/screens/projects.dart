@@ -1,3 +1,4 @@
+import 'package:acronyms/screens/project_form.dart';
 import 'package:acronyms/services/project_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -31,7 +32,12 @@ class Projects extends StatelessWidget {
         tooltip: 'Add',
         child: new Icon(Icons.add),
         elevation: 20.0,
-        onPressed: sayHello,
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProjectForm())
+          );
+        },
       ),
     );
   }
