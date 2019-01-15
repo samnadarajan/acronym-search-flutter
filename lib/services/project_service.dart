@@ -19,9 +19,9 @@ class ProjectService {
         .listen((QuerySnapshot s) {
           if (s.documents.length > 0) {
             DocumentSnapshot d = s.documents[0];
-            d.data["projectName"] = "freak";
+            d.data["projectName"] = snapshot.data["name"];
             print(d.reference.documentID);
-            _dataService.updateData("defaultprojects", d.reference.documentID, d);
+            _dataService.updateData("defaultprojects", d.reference.documentID, d);//TODO fix this
           }
         }
      );
