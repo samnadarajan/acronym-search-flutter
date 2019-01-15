@@ -33,9 +33,21 @@ class Projects extends StatelessWidget {
         child: new Icon(Icons.add),
         elevation: 20.0,
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ProjectForm())
+          showDialog(
+            context: context,
+            builder: (_) =>
+            new AlertDialog(
+              title: Text("New Project"),
+              contentPadding: EdgeInsets.all(16),
+              content: ProjectForm(),
+              actions: <Widget>[
+                new RaisedButton(
+                    onPressed: () => {},
+                  child: Text("Save"),
+                  textColor: Colors.white,
+                )
+              ],
+            )
           );
         },
       ),
